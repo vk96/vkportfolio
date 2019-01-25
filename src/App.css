@@ -1,0 +1,30 @@
+:root {
+  --primary-color: #3498db;
+  --primary-white: #f3f3f3;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--primary-color);
+}
+
+.carrousel_wrapper {
+  height: 700px;
+  overflow: hidden;
+}
+
+.carrousel_image {
+  background-size: cover !important;
+}
+
+/* Navbar */
+
+.nav-item {
+  margin-left: 20px;
+}
