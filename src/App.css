@@ -1,0 +1,55 @@
+:root {
+  --primary-color: #3498db;
+  --primary-white: #f3f3f3;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--primary-color);
+}
+
+.carrousel_wrapper {
+  height: 700px;
+  overflow: hidden;
+}
+
+.carrousel_image {
+  background-size: cover !important;
+}
+
+/* Navbar */
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.designation {
+  text-align: center;
+  overflow: hidden;
+}
+
+.designation {
+  font-size: 24px;
+  animation: my-ani 5s infinite steps(15);
+  white-space: nowrap;
+  border-right: 4px solid #fff;
+  margin: 0 auto;
+}
+
+@keyframes my-ani {
+  0% {
+    width: 0ch;
+  }
+  50% {
+    width: 14ch;
+  }
+  100% {
+    width: 0ch;
+  }
+}
