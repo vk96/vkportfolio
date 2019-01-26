@@ -24,6 +24,15 @@ body {
 }
 
 /* Navbar */
+.navbar.my-navbar {
+  transition: all 2s ease;
+}
+
+.my-navbar.active {
+  background: #2ecc71 !important;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5) !important;
+  height: 70px !important;
+}
 
 .nav-item {
   margin-left: 20px;
@@ -334,11 +343,12 @@ body {
 
 #profile .content-profile .btn-skills {
   font-weight: bold;
-  padding: 10px 50px;
+  padding: 8px 40px;
   background: #3498db;
   border-radius: 25px;
-  margin-top: 16px;
+  margin-top: 8px;
   display: inline-block;
+  color: #fff;
 }
 
 #profile .content-profile .close {

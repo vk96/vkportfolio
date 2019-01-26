@@ -8,10 +8,12 @@ import {
   Nav,
   NavItem
 } from "reactstrap";
+import classnames from "classnames";
 
 export default class Header extends React.Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    styleHeader: false
   };
 
   toggleNavbar = () => {
@@ -20,8 +22,24 @@ export default class Header extends React.Component {
     });
   };
 
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = () => {
+    if (window.scrollY > window.innerHeight / 2) {
+      this.setState({
+        styleHeader: true
+      });
+    } else {
+      this.setState({
+        styleHeader: false
+      });
+    }
+  };
+
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, styleHeader } = this.state;
     return (
       <Navbar
         expand="md"
@@ -33,6 +51,7 @@ export default class Header extends React.Component {
           color: "#f3f3f3",
           fontSize: 18
         }}
+        className={classnames("my-navbar", { active: styleHeader })}
       >
         <NavbarBrand style={{ color: "#fff", fontSize: 22 }} href="/">
           VL
