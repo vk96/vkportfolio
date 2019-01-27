@@ -11,7 +11,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: var(--primary-color);
+  background: #fff;
 }
 
 .carrousel_wrapper {
@@ -370,6 +370,7 @@ footer {
 
 #contact {
   font-family: Roboto;
+  background-color: #fff !important;
 }
 
 #contact .heading {
