@@ -12,6 +12,8 @@ import {
 import classnames from "classnames";
 // context api
 import { Consumer } from "../context";
+// react scroll
+import { scroller } from "react-scroll";
 
 class Header extends React.Component {
   state = {
@@ -43,6 +45,15 @@ class Header extends React.Component {
     // this.props.activeSkill;
   };
 
+  handleScrollElement = element => {
+    scroller.scrollTo(element, {
+      duration: 1000,
+      smooth: true,
+      offset: -50
+    });
+    this.props.activeNavbar(element);
+  };
+
   render() {
     const { isOpen, styleHeader } = this.state;
     return (
@@ -62,7 +73,8 @@ class Header extends React.Component {
           <NavbarBrand
             className="my-brand"
             style={{ color: "#fff", fontSize: 22 }}
-            href="/"
+            onClick={() => this.handleScrollElement("home")}
+            style={{ cursor: "pointer" }}
           >
             VL
           </NavbarBrand>
@@ -71,10 +83,34 @@ class Header extends React.Component {
           </NavbarToggler>
           <Collapse isOpen={isOpen} navbar>
             <Nav className="float-right" navbar>
-              <NavItem className="nav-item">home</NavItem>
-              <NavItem className="nav-item">about</NavItem>
-              <NavItem className="nav-item">service</NavItem>
-              <NavItem className="nav-item">contect</NavItem>
+              <NavItem
+                className="nav-item"
+                onClick={() => this.handleScrollElement("home")}
+                style={{ cursor: "pointer" }}
+              >
+                home
+              </NavItem>
+              <NavItem
+                className="nav-item"
+                onClick={() => this.handleScrollElement("about")}
+                style={{ cursor: "pointer" }}
+              >
+                about
+              </NavItem>
+              <NavItem
+                className="nav-item"
+                onClick={() => this.handleScrollElement("service")}
+                style={{ cursor: "pointer" }}
+              >
+                service
+              </NavItem>
+              <NavItem
+                className="nav-item"
+                onClick={() => this.handleScrollElement("contact")}
+                style={{ cursor: "pointer" }}
+              >
+                contect
+              </NavItem>
             </Nav>
           </Collapse>
         </Container>
@@ -85,6 +121,12 @@ class Header extends React.Component {
 
 export default props => (
   <Consumer>
-    {({ activeSkill }) => <Header {...props} activeSkill={activeSkill} />}
+    {({ activeSkill, activeNavbar }) => (
+      <Header
+        {...props}
+        activeSkill={activeSkill}
+        activeNavbar={activeNavbar}
+      />
+    )}
   </Consumer>
 );

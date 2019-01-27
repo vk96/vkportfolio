@@ -237,7 +237,7 @@ body {
 }
 
 #profile h1 {
-  font-size: 48px;
+  font-size: 40px;
   color: #333;
 }
 
@@ -265,7 +265,7 @@ body {
   padding: 7px 10px;
   background: #f8f9fb;
   color: #2ecc71;
-  border-radius: 14px;
+  border-radius: 34px;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
@@ -332,4 +332,116 @@ footer {
   background: #252525;
   color: #fff;
   text-align: center;
+}
+
+#service {
+  padding: 40px 0;
+  background: #2ecc71;
+  color: #f3f3f3;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+#service .title {
+  font-size: 40px;
+  color: #f3f3f3;
+  font-weight: 600;
+  margin-left: -15px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+#service .icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+#service .provide {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#service .description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* contact us */
+
+#contact {
+  font-family: Roboto;
+}
+
+#contact .heading {
+  margin: 34px 0;
+  font-size: 38px;
+  margin-left: -15px;
+}
+
+#contact .labels {
+  font-size: 20px;
+  display: block;
+  margin: 0 0px 8px 15px;
+}
+
+#contact .inputs {
+  display: block;
+  width: 250px;
+  height: 38px;
+  margin-left: 15px;
+  margin-bottom: 27px;
+  border: 2px solid #3fd05f;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+#contact .input {
+  display: block;
+  margin-left: 15px;
+  margin-bottom: 27px;
+  border: 2px solid #3fd05f;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+#contact .msg {
+  width: 600px;
+  height: 100px;
+}
+
+#contact .submit {
+  margin-left: 15px;
+  margin-bottom: 50px;
+  border: 2px solid #3fd05f;
+  background-color: #fff;
+  padding: 10px 47px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+#contact .submit:hover {
+  background-color: #3fd05f;
+  color: #fff;
+}
+
+/* person details */
+
+.my-card {
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.details-icons {
+  font-size: 28px;
+  color: #2ecc71;
+}
+
+.details-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.details-value {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
 }

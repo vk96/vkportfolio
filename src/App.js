@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+// react scroll
+import { Element } from "react-scroll";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -12,13 +14,22 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <div style={{ position: "relative" }}>
-          <Home />
-        </div>
-        <About />
-        <Service />
-        <MyWork />
-        <Contact />
+        <Element name="home">
+          <div style={{ position: "relative" }}>
+            <Home />
+          </div>
+        </Element>
+        <Element name="about">
+          <About />
+        </Element>
+
+        <Element name="service">
+          <Service />
+        </Element>
+        <Element name="contact">
+          <Contact />
+        </Element>
+
         <Footer />
       </div>
     );

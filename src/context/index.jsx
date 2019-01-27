@@ -4,7 +4,10 @@ const Context = React.createContext();
 
 class Provider extends Component {
   state = {
-    skillsAni: false
+    skillsAni: false,
+    navAbout: false,
+    navService:false,
+    
   };
   activeSkill = () => {
     if (this.state.skillsAni === false) {
@@ -13,12 +16,16 @@ class Provider extends Component {
       });
     }
   };
+  activeNavbar = element => {
+    console.log("navbar active", element);
+  };
   render() {
     return (
       <Context.Provider
         value={{
           ...this.state,
-          activeSkill: this.activeSkill
+          activeSkill: this.activeSkill,
+          activeNavbar: this.activeNavbar
         }}
       >
         {this.props.children}
