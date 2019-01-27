@@ -1,7 +1,7 @@
 export const skills = [
   {
     name: "html",
-    percen: "70%",
+    percen: "90%",
     icon: "html5"
   },
   {
@@ -11,17 +11,17 @@ export const skills = [
   },
   {
     name: "javascript",
-    percen: "50%",
+    percen: "70%",
     icon: "js"
   },
   {
     name: "bootstrap",
-    percen: "68%",
+    percen: "80%",
     icon: "bold"
   },
   {
     name: "reactjs",
-    percen: "68%",
+    percen: "85%",
     icon: "react"
   }
 ];

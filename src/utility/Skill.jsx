@@ -1,4 +1,7 @@
 import React from "react";
+import classnames from "classnames";
+// context api
+import { Consumer } from "../context";
 
 export default function Skill({ name, percen, icon }) {
   return (
@@ -9,9 +12,15 @@ export default function Skill({ name, percen, icon }) {
         <span className="percen">{percen}</span>
       </p>
 
-      <span className="bar">
-        <span className={name} />
-      </span>
+      <Consumer>
+        {val => {
+          return (
+            <span className="bar">
+              <span className={classnames(name, { active: val.skillsAni })} />
+            </span>
+          );
+        }}
+      </Consumer>
     </React.Fragment>
   );
 }

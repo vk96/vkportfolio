@@ -2,6 +2,8 @@ import React from "react";
 import Skill from "./Skill";
 // my skills data
 import { skills } from "../data/skills";
+// context
+import { Consumer } from "../context";
 
 export default function Skills() {
   return (
@@ -16,6 +18,7 @@ export default function Skills() {
           />
         );
       })}
+      <Consumer>{val => <p>{val.skillsAni}</p>}</Consumer>
     </div>
   );
 }

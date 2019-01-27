@@ -6,11 +6,14 @@ import {
   NavbarToggler,
   Collapse,
   Nav,
-  NavItem
+  NavItem,
+  Container
 } from "reactstrap";
 import classnames from "classnames";
+// context api
+import { Consumer } from "../context";
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   state = {
     isOpen: false,
     styleHeader: false
@@ -31,11 +34,13 @@ export default class Header extends React.Component {
       this.setState({
         styleHeader: true
       });
+      this.props.activeSkill();
     } else {
       this.setState({
         styleHeader: false
       });
     }
+    // this.props.activeSkill;
   };
 
   render() {
@@ -53,19 +58,33 @@ export default class Header extends React.Component {
         }}
         className={classnames("my-navbar", { active: styleHeader })}
       >
-        <NavbarBrand style={{ color: "#fff", fontSize: 22 }} href="/">
-          VL
-        </NavbarBrand>
-        <NavbarToggler onClick={this.toggleNavbar}>
-          <i className="fas fa-bars" />
-        </NavbarToggler>
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mx-auto" navbar>
-            <NavItem className="nav-item">home</NavItem>
-            <NavItem className="nav-item">about</NavItem>
-          </Nav>
-        </Collapse>
+        <Container>
+          <NavbarBrand
+            className="my-brand"
+            style={{ color: "#fff", fontSize: 22 }}
+            href="/"
+          >
+            VL
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggleNavbar}>
+            <i className="fas fa-bars" />
+          </NavbarToggler>
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="float-right" navbar>
+              <NavItem className="nav-item">home</NavItem>
+              <NavItem className="nav-item">about</NavItem>
+              <NavItem className="nav-item">service</NavItem>
+              <NavItem className="nav-item">contect</NavItem>
+            </Nav>
+          </Collapse>
+        </Container>
       </Navbar>
     );
   }
 }
+
+export default props => (
+  <Consumer>
+    {({ activeSkill }) => <Header {...props} activeSkill={activeSkill} />}
+  </Consumer>
+);

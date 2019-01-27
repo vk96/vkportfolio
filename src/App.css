@@ -24,14 +24,26 @@ body {
 }
 
 /* Navbar */
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
 .navbar.my-navbar {
-  transition: all 2s ease;
+  transition: all 1s ease;
 }
 
 .my-navbar.active {
-  background: #2ecc71 !important;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5) !important;
-  height: 70px !important;
+  background: #fff !important;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5) !important;
+  color: #000 !important;
+  font-size: 20px !important;
+  transform: scale(1);
+}
+
+.my-navbar.active .my-brand {
+  color: #000 !important;
+  font-size: 28px !important;
+  transition: all 1s ease;
 }
 
 .nav-item {
@@ -139,15 +151,15 @@ body {
   position: relative;
 }
 
-#profile .skills .bar .html {
-  width: 70%;
+#profile .skills .bar .html.active {
+  width: 90%;
   -webkit-animation: html 2s ease 2s;
   animation: html 2s ease 2s;
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
 
-#profile .skills .bar .css {
+#profile .skills .bar .css.active {
   width: 60%;
   -webkit-animation: css 2s ease 2s;
   animation: css 2s ease 2s;
@@ -155,24 +167,24 @@ body {
   animation-fill-mode: backwards;
 }
 
-#profile .skills .bar .javascript {
-  width: 50%;
+#profile .skills .bar .javascript.active {
+  width: 70%;
   -webkit-animation: js 2s ease 2s;
   animation: js 2s ease 2s;
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
 
-#profile .skills .bar .bootstrap {
-  width: 68%;
+#profile .skills .bar .bootstrap.active {
+  width: 80%;
   -webkit-animation: bootstrap 2s ease 2s;
   animation: bootstrap 2s ease 2s;
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
 
-#profile .skills .bar .reactjs {
-  width: 58%;
+#profile .skills .bar .reactjs.active {
+  width: 85%;
   -webkit-animation: reactjs 2s ease 2s;
   animation: reactjs 2s ease 2s;
   -webkit-animation-fill-mode: backwards;
@@ -184,29 +196,11 @@ body {
     width: 0%;
   }
   to {
-    width: 70%;
-  }
-}
-
-@keyframes html {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
+    width: 90%;
   }
 }
 
 @-webkit-keyframes css {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-
-@keyframes css {
   from {
     width: 0%;
   }
@@ -220,16 +214,7 @@ body {
     width: 0%;
   }
   to {
-    width: 50%;
-  }
-}
-
-@keyframes js {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 50%;
+    width: 70%;
   }
 }
 
@@ -238,16 +223,7 @@ body {
     width: 0%;
   }
   to {
-    width: 68%;
-  }
-}
-
-@keyframes bootstrap {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 68%;
+    width: 80%;
   }
 }
 
@@ -256,16 +232,7 @@ body {
     width: 0%;
   }
   to {
-    width: 58%;
-  }
-}
-
-@keyframes reactjs {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 58%;
+    width: 85%;
   }
 }
 
